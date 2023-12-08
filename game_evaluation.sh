@@ -1,12 +1,17 @@
+#simple game in bash
+
 #!/bin/bash
 
+#take in input a value
 echo "choose a number from 1 to 5"
 read num
 
-echo $(( $RANDOM % 6  ))
+#generate a random number from 1 to 5
+r=$(( $RANDOM % 6  ))
 
-if [num == $(( $RANDOM % 6  ))]
+#compare the input value with the random value
+if [ "$num" -eq "$r" ];then
   echo "you won"
-  else 
-     echo "you lost"
-
+else 
+  echo "you lost"
+fi
